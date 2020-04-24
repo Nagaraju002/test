@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    stages {
+        stage("Build") {
+            steps {
+                echo "Building..."
+                snDevOpsStep()
+                sh 'mvn clean install'
+            }
+        }
+        stage("Test") {
+            steps {
+            	echo "Testing..."
+                snDevOpsStep()
+                sh "mvn test -Dpublish"
+​                junit "**/target/surefire-reports/*.xml"
+            }
+        }
+        stage("Deploy") {
+            steps {
+            	echo "Deploying.."
+                snDevOpsStep()
+            }
+        }
+    }
+}
