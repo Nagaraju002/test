@@ -18,14 +18,14 @@ pipeline {
                 sh "mvn test -Dpublish"
                junit "**/target/surefire-reports/*.xml"
                
-               snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "devops_pipeline_demo.jar","version": "2.0","semanticVersion": "2.0.0","repositoryName": "devops_pipeline_demo"}],"stageName": "unit-tests"}""")
+               snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "devops_pipeline_demo.jar","version": "2.1","semanticVersion": "2.1.0","repositoryName": "devops_pipeline_demo"}]}""")
             }
         }
         stage("Deploy") {
             steps {
             	echo "Deploying.."
                 snDevOpsStep()
-                snDevOpsPackage(name: "devops_pipeline_demo", artifactsPayload: """{"artifacts": [{"name": "devops_pipeline_demo.jar","version": "2.0","semanticVersion": "2.0.0","repositoryName": "devops_pipeline_demo"}]}""")
+                snDevOpsPackage(name: "devops_pipeline_demo", artifactsPayload: """{"artifacts": [{"name": "devops_pipeline_demo.jar","version": "2.1","semanticVersion": "2.1.0","repositoryName": "devops_pipeline_demo"}]}""")
                 sleep 5
                 snDevOpsChange()
             }
