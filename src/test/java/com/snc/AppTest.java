@@ -28,4 +28,13 @@ public class AppTest
         App app = new App();
         Assert.assertEquals("Sleepy Hello World!", app.sleepySleepyHello("World"));
     }
+    
+    
+    @Test
+    public void flakyTest() throws InterruptedException {
+        Random rand = new Random();
+
+        int randomNum = rand.nextInt(2) + 1;
+        Assert.assertEquals(randomNum, 2);
+    }
 }
