@@ -1,8 +1,8 @@
 package com.snc;
 
+import java.util.*;
 import org.junit.Assert;
 import org.junit.Test;
-import java.util;
 
 /**
  * Unit test for simple App.
@@ -36,6 +36,7 @@ public class AppTest
         Random rand = new Random();
 
         int randomNum = rand.nextInt(2) + 1;
-        Assert.assertEquals(randomNum, 2);
+        System.out.println("\n randomNum value is : " + randomNum);
+        Assert.assertNotEquals(randomNum, 2);
     }
 }
