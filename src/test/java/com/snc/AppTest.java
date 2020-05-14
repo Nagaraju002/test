@@ -31,12 +31,12 @@ public class AppTest
     }
     
     
-    @Test
-    public void flakyTest() throws InterruptedException {
-        Random rand = new Random();
+//     @Test
+//     public void flakyTest() throws InterruptedException {
+//         Random rand = new Random();
 
-        int randomNum = rand.nextInt(2) + 1;
-        System.out.println("\n randomNum value is : " + randomNum);
-        Assert.assertNotEquals(randomNum, 2);
-    }
+//         int randomNum = rand.nextInt(2) + 1;
+//         System.out.println("\n randomNum value is : " + randomNum);
+//         Assert.assertNotEquals(randomNum, 2);
+//     }
 }
