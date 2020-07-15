@@ -25,7 +25,8 @@ pipeline {
             steps {
             	echo "Deploying.."
                 snDevOpsStep()
-                snDevOpsPackage(name: "devops_pipeline_demo", artifactsPayload: """{"artifacts": [{"name": "devops_pipeline_demo.jar","version": "2.6","semanticVersion": "2.6.0","repositoryName": "devops_pipeline_demo"}]}""")
+                # snDevOpsPackage(name: "devops_pipeline_demo", artifactsPayload: """{"artifacts": [{"name": "devops_pipeline_demo.jar","version": "2.6","semanticVersion": "2.6.0","repositoryName": "devops_pipeline_demo"}]}""")
+                snDevOpsPackage(name: "devops_pipeline_demo")
                 sleep 5
                 snDevOpsChange()
             }
