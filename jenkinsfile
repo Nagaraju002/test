@@ -19,11 +19,11 @@ pipeline {
                junit "**/target/surefire-reports/*.xml"
                
                snDevOpsArtifact(artifactsPayload:"""{"artifacts": [
-                    {"name": "4_demo1.jar","version": "4.5","semanticVersion": "4.5.0","repositoryName": "4_demo"}, 
-                    {"name": "devops_pipeline_demo1.jar","version": "2.8","semanticVersion": "2.8.0","repositoryName": "devops_pipeline_demo"},
-                    {"name": "1_demo1.jar","version": "1.4","semanticVersion": "1.4.0","repositoryName": "1_demo"},
-                    {"name": "2_demo1.jar","version": "2.4","semanticVersion": "2.4.0","repositoryName": "2_demo"},
-                    {"name": "3_demo1.jar","version": "3.4","semanticVersion": "3.4.0","repositoryName": "3_demo"}]}""")
+                    {"name": "demo1.jar","version": "1.0","semanticVersion": "1.0.0","repositoryName": "demo1"},
+                    {"name": "demo2.jar","version": "1.0","semanticVersion": "1.0.0","repositoryName": "demo2"},
+                    {"name": "demo3.jar","version": "1.0","semanticVersion": "1.0.0","repositoryName": "demo3"},
+                    {"name": "demo4.jar","version": "1.0","semanticVersion": "1.0.0","repositoryName": "demo4"},
+                    {"name": "demo5.jar","version": "1.0","semanticVersion": "1.0.0","repositoryName": "demo5"}]}""")
             }
         }
         stage("Deploy") {
