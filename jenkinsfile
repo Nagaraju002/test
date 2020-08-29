@@ -44,5 +44,16 @@ pipeline {
                 snDevOpsChange()
             }
         }
+        stage("Prod") {
+            steps {
+                sleep 30
+            	echo "Testing..."
+                snDevOpsStep()
+                sh "mvn test -Dpublish"
+               junit "**/target/surefire-reports/*.xml"
+               
+            }
+        }
+
     }
 }
