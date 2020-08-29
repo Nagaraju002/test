@@ -46,7 +46,7 @@ pipeline {
         }
         stage("Prod") {
             steps {
-                sleep 30
+                sleep 5
             	echo "Testing..."
                 snDevOpsStep()
                 sh "mvn test -Dpublish"
