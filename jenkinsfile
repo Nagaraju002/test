@@ -46,11 +46,11 @@ pipeline {
         }
         stage("Prod") {
             steps {
-                sleep 5
+                sleep 6
             	echo "Testing..."
                 snDevOpsStep()
                 sh "mvn test -Dpublish"
-               junit "**/target/surefire-reports/*.xml"
+                junit "**/target/surefire-reports/*.xml"
                
             }
         }
